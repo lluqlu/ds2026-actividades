@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1f4e79;
+    color: white;
+    padding: 20px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+}
+
+img {
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+footer {
+    background-color: #1f4e79;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Selector de clase */
+.destacado {
+    font-weight: bold;
+    color: #1f4e79;
+}
