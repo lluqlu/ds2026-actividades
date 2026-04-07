@@ -1,4 +1,4 @@
-# 🧑‍💻 Lautaro Luque
+# 💻 Lautaro Luque
 
 ### 📘 Desarrollo de Software  
 **Comisión:** S33  
