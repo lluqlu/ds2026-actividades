@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Button, Card } from 'react-bootstrap'
 
 type LibroCardProps = {
@@ -8,6 +9,8 @@ type LibroCardProps = {
 }
 
 function LibroCard({ titulo, autor, precio, genero }: LibroCardProps) {
+  const [likes, setLikes] = useState(0)
+
   return (
     <Card style={{ width: '16rem' }}>
       <Card.Body>
@@ -15,7 +18,12 @@ function LibroCard({ titulo, autor, precio, genero }: LibroCardProps) {
         <Card.Text className="text-muted">{autor}</Card.Text>
         <Card.Text>{genero}</Card.Text>
         <Card.Text className="fw-bold">${precio.toLocaleString('es-AR')}</Card.Text>
-        <Button variant="primary" size="sm">Ver más</Button>
+        <div className="d-flex gap-2">
+          <Button variant="primary" size="sm">Ver más</Button>
+          <Button variant="outline-danger" size="sm" onClick={() => setLikes(likes + 1)}>
+            Me gusta {likes}
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   )
