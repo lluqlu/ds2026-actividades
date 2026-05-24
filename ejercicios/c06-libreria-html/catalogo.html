@@ -25,6 +25,20 @@
         </div>
     </nav>
 
+    <div class="container my-5">
+        <h2 class="mb-4">Catálogo</h2>
+        <div class="row g-2 mb-4">
+            <div class="col-12 col-md-8">
+                <input type="text" id="inputBusqueda" class="form-control" placeholder="Buscar por título, autor o palabra clave">
+            </div>
+            <div class="col-12 col-md-4">
+                <button id="btnBuscar" class="btn btn-dark w-100">Buscar</button>
+            </div>
+        </div>
+        <p id="errorBusqueda" class="text-danger" style="display: none;"></p>
+        <div id="resultados"></div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/data.js"></script>
 </body>
