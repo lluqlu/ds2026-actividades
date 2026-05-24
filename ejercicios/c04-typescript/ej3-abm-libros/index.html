@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - ABM de Libros</title>
+</head>
+<body>
+
+    <h1>ABM de Libros</h1>
+
+    <h2>Agregar libro</h2>
+    <div>
+        <input type="text" id="inputTitulo" placeholder="Título">
+        <input type="text" id="inputAutor" placeholder="Autor">
+        <input type="number" id="inputPrecio" placeholder="Precio">
+        <input type="text" id="inputGenero" placeholder="Género (opcional)">
+        <label>
+            <input type="checkbox" id="inputDisponible"> Disponible
+        </label>
+        <button id="btnAgregar">Agregar</button>
+    </div>
+    <div id="errorForm"></div>
+
+    <h2>Catálogo</h2>
+    <input type="text" id="filtroAutor" placeholder="Filtrar por autor">
+    <button id="filtrar">Filtrar</button>
+    <button id="mostrarDisponibles">Solo disponibles</button>
+    <button id="mostrarTodos">Ver todos</button>
+
+    <ul id="listado"></ul>
+    <p id="stats"></p>
+
+    <script src="app.js"></script>
+</body>
+</html>
