@@ -1,11 +1,7 @@
-type FooterProps = {
-  texto: string
-}
-
-function Footer({ texto }: FooterProps) {
+function Footer() {
   return (
     <footer className="bg-dark text-white text-center py-3 mt-5">
-      <p className="mb-0">{texto}</p>
+      <p className="mb-0">Mi Librería 2026</p>
     </footer>
   )
 }

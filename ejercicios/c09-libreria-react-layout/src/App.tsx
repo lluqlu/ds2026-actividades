@@ -1,14 +1,11 @@
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
+import Layout from './components/Layout/Layout'
 import Home from './pages/Home'
 
 function App() {
   return (
-    <div>
-      <Navbar titulo="Mi Librería" />
+    <Layout>
       <Home />
-      <Footer texto="Mi Librería 2026" />
-    </div>
+    </Layout>
   )
 }
 
