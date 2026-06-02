@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import { Button, Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import type { Libro } from '../types/libro'
 
-type LibroCardProps = Omit<Libro, 'id'>
-
-function LibroCard({ titulo, autor, precio, genero }: LibroCardProps) {
+function LibroCard({ id, titulo, autor, precio, genero }: Libro) {
   const [likes, setLikes] = useState(0)
 
   return (
@@ -15,7 +14,7 @@ function LibroCard({ titulo, autor, precio, genero }: LibroCardProps) {
         <Card.Text>{genero}</Card.Text>
         <Card.Text className="fw-bold">${precio.toLocaleString('es-AR')}</Card.Text>
         <div className="d-flex gap-2">
-          <Button variant="primary" size="sm">Ver más</Button>
+          <Button as={Link as never} to={`/libros/${id}`} variant="primary" size="sm">Ver más</Button>
           <Button variant="outline-danger" size="sm" onClick={() => setLikes(likes + 1)}>
             Me gusta {likes}
           </Button>
