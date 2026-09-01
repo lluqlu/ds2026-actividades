@@ -1,0 +1,8 @@
+[
+  { "id": 1, "titulo": "El Aleph", "autor": "Jorge Luis Borges", "precio": 15000, "genero": "Cuentos", "disponible": true, "imagen": "https://placehold.co/300x400?text=El+Aleph" },
+  { "id": 2, "titulo": "Rayuela", "autor": "Julio Cortázar", "precio": 18000, "genero": "Novela", "disponible": true, "imagen": "https://placehold.co/300x400?text=Rayuela" },
+  { "id": 3, "titulo": "Ficciones", "autor": "Jorge Luis Borges", "precio": 14000, "genero": "Cuentos", "disponible": true, "imagen": "https://placehold.co/300x400?text=Ficciones" },
+  { "id": 4, "titulo": "Cien años de soledad", "autor": "Gabriel García Márquez", "precio": 22000, "genero": "Novela", "disponible": false, "imagen": "https://placehold.co/300x400?text=Cien+anios" },
+  { "id": 5, "titulo": "El túnel", "autor": "Ernesto Sábato", "precio": 12000, "genero": "Novela", "disponible": true, "imagen": "https://placehold.co/300x400?text=El+tunel" },
+  { "id": 6, "titulo": "Santa Evita", "autor": "Tomás Eloy Martínez", "precio": 16000, "genero": "Novela", "disponible": true, "imagen": "https://placehold.co/300x400?text=Santa+Evita" }
+]
