@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:3000
+
+### Hello
+GET {{baseUrl}}/
+
+### Listar libros
+GET {{baseUrl}}/libros
+
+### Libros disponibles
+GET {{baseUrl}}/libros?disponible=true
+
+### Libros sin stock
+GET {{baseUrl}}/libros?disponible=false
+
+### Listar autores
+GET {{baseUrl}}/autores
