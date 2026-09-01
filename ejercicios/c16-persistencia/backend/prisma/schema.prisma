@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client" // Prisma 7 (no "prisma-client-js")
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  // La URL la inyecta prisma.config.ts desde DATABASE_URL.
+}
+
+// AI-C16: Libro y Autor SIN relación entre ellos todavía. El libro guarda el
+// nombre del autor como texto. La relación 1:N llega en C17.
+
+model Libro {
+  id         Int     @id @default(autoincrement())
+  titulo     String
+  autor      String
+  precio     Int
+  imagen     String
+  disponible Boolean @default(true)
+}
+
+model Autor {
+  id           Int    @id @default(autoincrement())
+  nombre       String @unique
+  nacionalidad String
+}
