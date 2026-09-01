@@ -1,0 +1,104 @@
+@baseUrl = http://localhost:3000
+
+### Hello
+GET {{baseUrl}}/
+
+### ---------- LIBROS ----------
+
+### Listar libros (cada uno con su autor)
+GET {{baseUrl}}/api/libros
+
+### Listar sólo disponibles
+GET {{baseUrl}}/api/libros?disponible=true
+
+### Ver un libro (con autor y categorías)
+GET {{baseUrl}}/api/libros/1
+
+### id inválido (no numérico) -> 400
+GET {{baseUrl}}/api/libros/abc
+
+### Libro que no existe -> 404
+GET {{baseUrl}}/api/libros/9999
+
+### Crear un libro -> 201
+POST {{baseUrl}}/api/libros
+Content-Type: application/json
+
+{ "titulo": "Rayuela", "precio": 18000, "imagen": "https://placehold.co/300x400?text=Libro", "autorId": 5 }
+
+### Crear con body inválido (precio negativo, sin título) -> 400
+POST {{baseUrl}}/api/libros
+Content-Type: application/json
+
+{ "titulo": "", "precio": -5, "imagen": "", "autorId": 5 }
+
+### Crear apuntando a un autor inexistente -> 409 (P2003)
+POST {{baseUrl}}/api/libros
+Content-Type: application/json
+
+{ "titulo": "Huérfano", "precio": 1000, "imagen": "x", "autorId": 9999 }
+
+### Actualizar un libro (parcial) -> 200
+PUT {{baseUrl}}/api/libros/1
+Content-Type: application/json
+
+{ "precio": 5200, "disponible": false }
+
+### Actualizar un libro que no existe -> 404
+PUT {{baseUrl}}/api/libros/9999
+Content-Type: application/json
+
+{ "precio": 1 }
+
+### Borrar un libro -> 204
+DELETE {{baseUrl}}/api/libros/10
+
+### Borrar un libro que no existe -> 404
+DELETE {{baseUrl}}/api/libros/9999
+
+### ---------- AUTORES ----------
+
+### Listar autores (con sus libros)
+GET {{baseUrl}}/api/autores
+
+### Ver un autor
+GET {{baseUrl}}/api/autores/1
+
+### Autor que no existe -> 404
+GET {{baseUrl}}/api/autores/9999
+
+### Crear un autor -> 201
+POST {{baseUrl}}/api/autores
+Content-Type: application/json
+
+{ "nombre": "Julio Cortázar", "nacionalidad": "Argentina" }
+
+### Crear un autor con nombre repetido -> 409 (P2002)
+POST {{baseUrl}}/api/autores
+Content-Type: application/json
+
+{ "nombre": "George Orwell", "nacionalidad": "Reino Unido" }
+
+### Crear un autor con body inválido -> 400
+POST {{baseUrl}}/api/autores
+Content-Type: application/json
+
+{ "nombre": "" }
+
+### Actualizar un autor -> 200
+PUT {{baseUrl}}/api/autores/1
+Content-Type: application/json
+
+{ "nacionalidad": "Francesa" }
+
+### Actualizar un autor que no existe -> 404
+PUT {{baseUrl}}/api/autores/9999
+Content-Type: application/json
+
+{ "nacionalidad": "x" }
+
+### Borrar un autor -> 204
+DELETE {{baseUrl}}/api/autores/9
+
+### Borrar un autor que no existe -> 404
+DELETE {{baseUrl}}/api/autores/9999

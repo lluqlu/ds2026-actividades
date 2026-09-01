@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client" // Prisma 7 (no "prisma-client-js")
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  // La URL la inyecta prisma.config.ts desde DATABASE_URL.
+}
+
+// AI-C17: relaciones.
+//  - Autor 1:N Libro  (un libro tiene un autor; un autor tiene muchos libros)
+//  - Libro N:M Categoria (un libro tiene varias categorías y viceversa)
+
+model Libro {
+  id         Int         @id @default(autoincrement())
+  titulo     String
+  autor      Autor       @relation(fields: [autorId], references: [id])
+  autorId    Int
+  precio     Int
+  imagen     String
+  disponible Boolean     @default(true)
+  categorias Categoria[]
+}
+
+model Autor {
+  id           Int     @id @default(autoincrement())
+  nombre       String  @unique
+  nacionalidad String
+  libros       Libro[]
+}
+
+model Categoria {
+  id     Int     @id @default(autoincrement())
+  nombre String  @unique
+  libros Libro[]
+}
