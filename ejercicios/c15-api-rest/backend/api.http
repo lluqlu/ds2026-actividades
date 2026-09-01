@@ -1,0 +1,107 @@
+@baseUrl = http://localhost:3000
+
+### Hello
+GET {{baseUrl}}/
+
+### ---------- LIBROS ----------
+
+### Listar libros
+GET {{baseUrl}}/api/libros
+
+### Listar sólo disponibles
+GET {{baseUrl}}/api/libros?disponible=true
+
+### Ver un libro
+GET {{baseUrl}}/api/libros/1
+
+### Ver un libro que no existe -> 404
+GET {{baseUrl}}/api/libros/999
+
+### Crear un libro -> 201
+POST {{baseUrl}}/api/libros
+Content-Type: application/json
+
+{
+  "titulo": "El informe de Brodie",
+  "autor": "Jorge Luis Borges",
+  "precio": 13000,
+  "genero": "Cuentos",
+  "disponible": true,
+  "imagen": "https://placehold.co/300x400?text=Libro"
+}
+
+### Actualizar un libro
+PUT {{baseUrl}}/api/libros/1
+Content-Type: application/json
+
+{
+  "titulo": "El Aleph (edición aniversario)",
+  "autor": "Jorge Luis Borges",
+  "precio": 21000,
+  "genero": "Cuentos",
+  "disponible": true,
+  "imagen": "https://placehold.co/300x400?text=Libro"
+}
+
+### Actualizar un libro que no existe -> 404
+PUT {{baseUrl}}/api/libros/999
+Content-Type: application/json
+
+{
+  "titulo": "Fantasma",
+  "autor": "Nadie",
+  "precio": 1,
+  "genero": "Novela",
+  "disponible": true,
+  "imagen": "https://placehold.co/300x400?text=Libro"
+}
+
+### Borrar un libro -> 204
+DELETE {{baseUrl}}/api/libros/6
+
+### Borrar un libro que no existe -> 404
+DELETE {{baseUrl}}/api/libros/999
+
+### ---------- AUTORES ----------
+
+### Listar autores
+GET {{baseUrl}}/api/autores
+
+### Ver un autor
+GET {{baseUrl}}/api/autores/2
+
+### Ver un autor que no existe -> 404
+GET {{baseUrl}}/api/autores/999
+
+### Crear un autor -> 201
+POST {{baseUrl}}/api/autores
+Content-Type: application/json
+
+{
+  "nombre": "Adolfo Bioy Casares",
+  "nacionalidad": "Argentina"
+}
+
+### Actualizar un autor
+PUT {{baseUrl}}/api/autores/1
+Content-Type: application/json
+
+{
+  "nombre": "Jorge Francisco Isidoro Luis Borges",
+  "nacionalidad": "Argentina"
+}
+
+### Actualizar un autor que no existe -> 404
+PUT {{baseUrl}}/api/autores/999
+Content-Type: application/json
+
+{
+  "nombre": "Fantasma",
+  "nacionalidad": "Ninguna"
+}
+
+### Borrar un autor -> 204
+DELETE {{baseUrl}}/api/autores/5
+
+### Borrar un autor que no existe -> 404
+DELETE {{baseUrl}}/api/autores/999
