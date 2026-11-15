@@ -19,6 +19,18 @@ El objetivo es mantener un seguimiento ordenado de los ejercicios, aplicando bue
 
 ---
 
+## 🚀 Deploy (AI-C23)
+
+La Librería (`ejercicios/c23-deploy/`) está deployada en Render + Neon:
+
+- **Frontend:** https://ds2026-actividades-1-3jd4.onrender.com
+- **API:** https://ds2026-actividades-z59s.onrender.com/api
+
+Usuarios de prueba: `admin@libreria.test` / `Admin1234` · `cliente@libreria.test` / `Cliente1234`.
+Plan free: si el back estuvo inactivo, la primera carga puede tardar ~50 s.
+
+---
+
 ## 🗂 Estructura actual del proyecto
 
 ```bash
