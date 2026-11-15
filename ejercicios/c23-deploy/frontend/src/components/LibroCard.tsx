@@ -3,11 +3,19 @@ import { Badge, Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import type { Libro } from '../types/libro'
 
-function LibroCard({ id, titulo, autor, precio, disponible }: Libro) {
+function LibroCard({ id, titulo, autor, precio, imagen, disponible }: Libro) {
   const [likes, setLikes] = useState(0)
 
   return (
     <Card style={{ width: '16rem' }}>
+      {/* AI-C23: la portada ya venía en el JSON pero no se mostraba */}
+      <Card.Img
+        variant="top"
+        src={imagen}
+        alt={`Portada de ${titulo}`}
+        loading="lazy"
+        style={{ height: '22rem', objectFit: 'cover' }}
+      />
       <Card.Body>
         <Card.Title>{titulo}</Card.Title>
         <Card.Text className="text-muted">{autor.nombre}</Card.Text>

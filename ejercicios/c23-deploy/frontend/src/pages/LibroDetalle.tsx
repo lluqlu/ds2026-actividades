@@ -23,6 +23,12 @@ function LibroDetalle() {
 
   return (
     <div className="py-4" style={{ maxWidth: 480 }}>
+      <img
+        src={libro.imagen}
+        alt={`Portada de ${libro.titulo}`}
+        className="img-fluid rounded shadow-sm mb-3"
+        style={{ maxHeight: '28rem' }}
+      />
       <h2>{libro.titulo}</h2>
       <p className="text-muted">
         {libro.autor.nombre} · {libro.autor.nacionalidad}

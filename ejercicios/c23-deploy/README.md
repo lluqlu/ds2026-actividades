@@ -6,8 +6,8 @@ Orden de la guía: Neon → back → front → CORS → seed.
 
 ## URLs
 
-- Frontend: _(se completa al terminar el deploy)_
-- API: _(se completa al terminar el deploy)_
+- Frontend: https://ds2026-actividades-1-3jd4.onrender.com
+- API: https://ds2026-actividades-z59s.onrender.com/api
 
 ## Qué cambió respecto de C21
 
